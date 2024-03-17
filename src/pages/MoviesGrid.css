@@ -1,8 +1,6 @@
 .Container .Title{
     color: #fff;
-    font-size: 2.5rem;
     text-align: center;
-    margin: 2rem 0 1rem; /*2cima, 0lados, 1baixo*/
 }
 
 .Title .QueryText{
@@ -12,32 +10,18 @@
 .MoviesContainer{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 2rem;
-    max-width: 1200px;
+    justify-content: space-around;
     margin: 0 auto;
 }
 
 .MoviesContainer div{
-    width: 30%;
     color: #fff;
-    margin-bottom:2.5rem ;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #111;
-    padding: 1rem;
 }
 
-.MoviesContainer div img{
-    margin: 7px auto;
-}
-
-.MoviesContainer div img,
-.MoviesContainer div h2,
-.MoviesContainer div p{
-    margin-bottom: .6rem;
-}
 
 .StarFavorite{
     display: flex;
@@ -50,13 +34,11 @@
 }
 
 .Favorite {
-    font-size: 1.5rem;
     color: #c40202;
     display: inline;
 }
 
 .Favorite:hover {
-    font-size: 1.5rem;
     color: #c40202ab;
     display: inline;
     cursor: pointer;
@@ -65,9 +47,7 @@
 .MoviesContainer div a{
     background-color: #c40202;
     border:  2px solid #c40202;
-    border-radius: 4px;
     color: #000;
-    padding: 1rem .5rem;;
     align-items: center;
     transition: .4s;
     text-align: center;
@@ -77,4 +57,120 @@
 .MoviesContainer div a:hover{
     background-color: transparent;
     color: #c40202 ;
+}
+
+
+@media (min-width: 1028px){
+    .Container {
+        border: 1px solid white;
+    }
+    .Container .Title{
+        font-size: 2.8vw;
+        margin: 4vh 0 3vh; /*2cima, 0lados, 1baixo*/
+    }
+    
+    .MoviesContainer{
+        padding: 2vw;
+        max-width: 100vw;
+        border: 1px solid pink;
+    }
+    
+    .MoviesContainer div{
+        width: 26vw;
+        margin-bottom:3vw ;
+        padding: 1vw;
+    }
+    
+    .MoviesContainer div img{
+        margin: 0.8vw auto;
+    }
+    
+    .MoviesContainer div img,
+    .MoviesContainer div h2,
+    .MoviesContainer div p{
+        margin-bottom: .6vw;
+    }
+    
+    .Favorite {
+        font-size: 1.8vw;
+    }
+
+    .MoviesContainer div a{
+        padding: 1vw .5vw;;
+    }
+    
+}
+
+@media (min-width: 500px) and (max-width:1028px){
+    .Container .Title{
+        font-size: 2.8vw;
+        margin: 6vh 0 3vh; /*2cima, 0lados, 1baixo*/
+    }
+    
+    .MoviesContainer{
+        padding: 2vw;
+        max-width: 100vw;
+    }
+    
+    .MoviesContainer div{
+        width: 26vw;
+        margin-bottom:3vw ;
+        padding: 1vw;
+    }
+    
+    .MoviesContainer div img{
+        margin: 0.8vw auto;
+    }
+    
+    .MoviesContainer div img,
+    .MoviesContainer div h2,
+    .MoviesContainer div p{
+        margin-bottom: .6vw;
+    }
+
+    .MoviesContainer div a{
+        padding: 1vw .5vw;;
+    }
+}
+
+@media (max-width: 500px){
+    .Container .Title{
+        font-size: 4.5vw;
+        margin: 2.5vh 0 3vh;
+    }
+    
+    .MoviesContainer{
+        padding: 2vw;
+        max-width: 100vw;
+    }
+    
+    .MoviesContainer div{
+        width: 40vw;
+        margin-bottom:3vw ;
+        padding: 1vw;
+    }
+    
+    .MoviesContainer div img{
+        margin: 1vw auto;
+        width: 80%;
+    }
+    
+    .MoviesContainer div img,
+    .MoviesContainer div h2,
+    .MoviesContainer div p{
+        margin-bottom: 1vw;
+    }
+    .MoviesContainer div h2{
+        font-size: 3.5vw;
+    }
+    .MoviesContainer div p{
+        font-size: 3.5vw;
+    }
+    .MoviesContainer div svg{
+        font-size: 4vw;
+    }
+    .MoviesContainer div a{
+        padding: 1vw .5vw;;
+        font-size: 3vw;
+    }
 }

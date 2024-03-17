@@ -1,9 +1,6 @@
 .MoviePage{
     color: #fff;
     display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 2rem auto;
 }
 
 #Star{
@@ -11,12 +8,10 @@
 }
 
 .Favorite {
-    font-size: 1.5rem;
     color: #c40202;
 }
 
 .MoviePage svg{
-    font-size: 1.5rem;
     color: #c40202;
 }
 
@@ -24,48 +19,218 @@
     text-align: center;
 }
 
-.MoviePage .MovieCard img,
-.MoviePage .MovieCard h2,
-.MoviePage .MovieCard p{
-    margin-bottom: 1rem;
-}
-
-.MoviePage .MovieCard h2{
-    font-size: 2rem;
-}
-
 .MoviePage .MovieCard p{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .4rem;
 }
 
 .TagLine {
     text-align: center;
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-}
-
-.Info{
-    margin-bottom: 1.5rem;
 }
 
 .Info h3{
-    margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    gap: .5rem;
 }
 
-.Description{
-    padding-bottom: 5rem;
+@media (min-width: 1028px){
+    .MoviePage{
+        max-width: 90vw;
+        margin: 2vw auto;
+        flex-direction: row;
+    }
+
+    .Favorite {
+        font-size: 1.5vw;
+    }
+    
+    .MoviePage svg{
+        font-size: 1.5vw;
+    }
+    
+    .MoviePage .MovieCard img,
+    .MoviePage .MovieCard h2,
+    .MoviePage .MovieCard p{
+        margin-bottom: 1vw;
+    }
+    
+    .MoviePage .MovieCard h2{
+        font-size: 2vw;
+    }
+    
+    .MoviePage .MovieCard p{
+        gap: .4vw;
+    }
+    
+    .TagLine {
+        font-size: 1.3vw;
+        margin-bottom: 2vw;
+    }
+    
+    .Info{
+        margin-bottom: 1.5vw;
+    }
+    
+    .Info h3{
+        margin-bottom: 1vw;
+        gap: .5vw;
+    }
+    
+    .Description{
+        padding-bottom: 5vw;
+    }
+    
+    .Description p{
+        line-height: 1.4vw;
+    }
+    
+    img{
+        width: 20vw;
+        height: 65vh;
+        margin-right: 2vw;
+    }
 }
 
-.Description p{
-    line-height: 1.4rem;
+@media (min-width: 500px) and (max-width:1028px){
+    .MoviePage{
+        max-width: 100vw;
+        margin: 5vw auto;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .MoviePage svg{
+        font-size: 3vw;
+    }
+
+    .MoviePage .MovieCard img,
+    .MoviePage .MovieCard h2,
+    .MoviePage .MovieCard p{
+        margin-bottom: 1vw;
+    }
+
+    .MoviePage .MovieCard h2{
+        font-size: 2.6vw;
+    }
+    
+    .MovieCard h2{
+        font-size: 2.5vw;
+    }
+    .MovieCard svg{
+        font-size: 2.8vw;
+    }
+
+    .MoviePage .MovieCard p{
+        gap: .7vw;
+    }
+
+    .TagLine {
+        font-size: 2.7vw;
+        margin-bottom: 1.5vw;
+    }
+
+    .Info{
+        margin-bottom: 3.5vw;
+    }
+
+    .Info h3{
+        margin-bottom: 1vw;
+        gap: .7vw;
+        font-size: 2.2vw;
+    }
+    
+    .Info p{ 
+        font-size: 1.8vw;
+    }
+    .Description{
+        padding-bottom: 5vw;
+    }
+
+    .Description p{
+        line-height: 2.4vw;
+        font-size: 1.6vw;
+    }
+
+    img{
+        width: 60%;
+        margin-right: 2vw;
+    }
+
+    #infoContainer{
+        width: 50vw;
+        height: 65vh;
+        margin-right: 2vw;
+    }
 }
 
-img{
-    width: 50%;
+@media (max-width: 500px){
+    .MoviePage{
+        max-width: 100vw;
+        margin: 5vw auto;
+        flex-direction: column;
+        align-items: center;
+        height: 110vw;
+    }
+
+    .MoviePage svg{
+        font-size: 3vw;
+    }
+
+    .MoviePage .MovieCard img,
+    .MoviePage .MovieCard h2,
+    .MoviePage .MovieCard p{
+        margin-bottom: 1vw;
+    }
+
+    .MoviePage .MovieCard h2{
+        font-size: 3.9vw;
+    }
+    
+    .MovieCard svg{
+        font-size: 4.2vw;
+    }
+
+    .MoviePage .MovieCard p{
+        gap: .7vw;
+    }
+
+    .MovieCard{
+        margin-bottom: 3vh;
+    }
+
+    .TagLine {
+        font-size: 2.7vw;
+        margin-bottom: 1.5vw;
+    }
+
+    .Info{
+        margin-bottom: 3.5vw;
+    }
+
+    .Info h3{
+        margin-bottom: 1vw;
+        gap: .7vw;
+        font-size: 2.6vw;
+    }
+    
+    .Info p{ 
+        font-size: 2.3vw;
+    }
+
+    .Description p{
+        line-height: 2.6vw;
+        font-size: 2.2vw;
+    }
+
+    img{
+        width: 60%;
+        margin-right: 2vw;
+    }
+
+    #infoContainer{
+        width: 50vw;
+        height: 65vh;
+        margin-right: 2vw;
+    }
 }

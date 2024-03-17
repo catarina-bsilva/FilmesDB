@@ -1,25 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import MovieCardFavorite from '../components/MovieCardFavorite'
+import { favoriteContext } from '../context'
+import data from '../db.json'
 
 const Favorites = () => {
-  const [Movies, setMovies] = useState([])
-
-  useEffect(() => {
-    const fetchMovies = async () => {
-      const res = await fetch("http://localhost:3000/Favorites")
-      const data = await res.json()
-      setMovies(data)
-    }
-
-    fetchMovies()
-  }, [])
+  const {Favorite, setFavorite} = useContext(favoriteContext)
+  const {favoriteState, setFavoriteState} = useContext(favoriteContext)
 
   return (
     <div className='Container'>
       <h2 className="Title">Filmes Favoritos: <span className="FavoriteMovies"></span></h2>
       <div className="MoviesContainer">
-        {Movies?.length === 0 && <p>Não tem favoritos</p>}
-        {Movies?.length > 0 && Movies.map((Movie) => <MovieCardFavorite key={Movie.id} Movie={Movie}/>)}
+        {favoriteState?.length === 0 && <p>Não tem favoritos</p>}
+        {favoriteState?.length > 0 && favoriteState.map((Movie) => <MovieCardFavorite key={Movie.id} Movie={Movie}/>)}
       </div> 
     </div>
   )

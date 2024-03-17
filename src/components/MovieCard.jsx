@@ -1,67 +1,31 @@
 import { Link } from "react-router-dom"
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 import { FaStar } from 'react-icons/fa'
 import { MdFavorite, MdOutlineFavoriteBorder } from 'react-icons/md'
+import { favoriteContext } from "../context"
+import '../pages/Movie.css'
 
 const ImgUrl = import.meta.env.VITE_IMG
 const MoviesUrl = import.meta.env.VITE_API
 const ApiKey = import.meta.env.VITE_API_KEY
 
 const MovieCard = ({Movie, ShowLink =true}) => { //recebemos o objecto movie da API e ShowLink para mostrar ou nao botao para acessar a view individual de cada movie
-const [IsFavorite, setIsFavorite] = useState(false)
+const {Favorite, setFavorite} = useContext(favoriteContext)
+const {favoriteState, setFavoriteState} = useContext(favoriteContext)
 const [prevIsFavorite, setprevIsFavorite] = useState(false)
+const [IsFavorite, setIsFavorite] = useState(false)
+const favoriteMovie = favoriteState.some(favMovie => favMovie.id === Movie.id)
 
-const TurnFavorite = (Movie, isAddFavorite) => {
-  setIsFavorite(prevIsFavorite => !prevIsFavorite)
-
-  function fetchMovieDetails() {
-    fetch(`${MoviesUrl}${Movie.id}?${ApiKey}`)
-      .then(response => response.json())
-      .then(Data => {
-        const movieWithDetails = {
-          id: Data.id,
-          Poster: ImgUrl + Data.poster_path,
-          Name: Data.title,
-          Pontuacao: Data.vote_average,
-          IsFavorite: !prevIsFavorite,
-          Citacao: Data.tagline,
-          Orcamento: Data.budget,
-          Receita: Data.revenue,
-          Duracao: Data.runtime,
-          Descricao: Data.overview
-        }
-        console.log(movieWithDetails)
-        return movieWithDetails
-      })
-      .then(movieWithDetails => {
-        if (isAddFavorite) {
-          fetch('http://localhost:3000/Favorites', {
-            method: 'POST',
-            body: JSON.stringify(movieWithDetails),
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error(error));
-        } else {
-          fetch(`http://localhost:3000/Favorites/${Movie.id}`, {
-            method: 'DELETE',
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error(error));
-        }
-      })
-      .catch(Error => console.error(Error));
+const TurnFavorite = (Movie) => {
+  const isCurrentlyFavorite = favoriteState.some(favMovie => favMovie.id === Movie.id);
+  if (isCurrentlyFavorite) {
+    // Remove do estado de favoritos
+    setFavoriteState(favoriteState.filter(favMovie => favMovie.id !== Movie.id));
+  } else {
+    // Adiciona ao estado de favoritos
+    setFavoriteState([...favoriteState, Movie])
   }
-
-  fetchMovieDetails()
 }
 
 
@@ -86,7 +50,7 @@ const TurnFavorite = (Movie, isAddFavorite) => {
               Descricao: Movie.overview
             }, !IsFavorite)
   }>
-            {IsFavorite ? <MdFavorite className="Favorite" /> : <MdOutlineFavoriteBorder className="Favorite" />}
+            {favoriteMovie ? <MdFavorite className="Favorite" /> : <MdOutlineFavoriteBorder className="Favorite" />}
           </span>
         
        </p>

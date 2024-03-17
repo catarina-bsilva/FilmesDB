@@ -2,15 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 2em;
     background-color: #121212;
 }
 
 #Navbar h2 a{
     display: flex;
     align-items: center;
-    gap: .5rem;
-    font-size: 2rem;
+
 }
 
 #Navbar h3 a{
@@ -21,11 +19,10 @@
 
 #Navbar form{
     display: flex;
-    gap: .5rem;
+
 }
 
 #Navbar input{
-    padding: .2rem .8rem;
     border-radius: 4px;
     border: none;
 }
@@ -35,8 +32,6 @@
     border:  2px solid #c40202;
     border-radius: 4px;
     color: #000;
-    padding: .3rem;
-    font-size: 1.3rem;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -47,3 +42,110 @@
     background-color: transparent;
     color: #c40202 ;
 }
+
+@media (min-width: 1028px){
+    #Navbar{
+        padding: 1vw 2vw;
+    }
+    
+    #Navbar h2 a{
+        gap: .5vw;
+        font-size: 2.8vw;
+    }
+
+    
+    #Navbar form{
+        gap: .5vw;
+    }
+    
+    #Navbar input{
+        padding: .2vw .8vw;
+    }
+    
+    #Navbar form button{
+        padding: .3vw;
+        font-size: 1.3vw;
+    }
+}
+
+@media (min-width: 500px) and (max-width:1028px){
+    #Navbar{
+        padding: 1.4vh 2vw;
+        display: grid;
+        grid-template-columns: 30vw 30vw 30vw;
+        column-gap: 2.5vw;
+        justify-content: space-between;
+        width: 97vw;
+    }
+    
+    #Navbar h2 a{
+        gap: .5vw;
+        font-size: 3vw;
+        padding-left: 3vw;
+    }
+
+    #Navbar h3 a{
+        gap: .5vw;
+        font-size: 2.3vw;
+        padding-left: 3vw;
+    }
+
+    #Navbar form{
+        gap: .8vw;
+        
+    }
+    
+    #Navbar input{
+        padding: .2vw .8vw;
+    }
+    
+    #Navbar form button{
+        padding: .3vw;
+        font-size: 1.8vw;
+    }
+}
+
+
+
+@media (max-width: 500px){
+    #Navbar{
+        padding: 1.4vh 2vw;
+        display: grid;
+        grid-template-columns: 20vw 45vw 30vw;
+        column-gap: 2.5vw;
+        justify-content: space-between;
+        width: 100vw;
+    }
+    
+    #Navbar h2 a{
+        gap: .5vw;
+        font-size: 5vw;
+        padding-left: 10vw;
+    }
+
+    #Navbar h3 a{
+        gap: .5vw;
+        font-size: 3.5vw;
+        padding-left: 2.5vw;
+    }
+
+    #Navbar form{
+        gap: .8vw;
+        margin-right: 2.7vw;
+        
+    }
+    
+    #Navbar input{
+        padding: .2vw .8vw;
+        font-size: 1.8vw;
+    }
+    
+    #Navbar form button{
+        padding: .3vw;
+        font-size: 1.8vw;
+    }
+    #Navbar h2 svg {
+        scale: 1.2;
+    }
+}
+
